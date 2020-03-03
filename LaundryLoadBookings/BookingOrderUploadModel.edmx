@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="eInvoiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eInvoice.dbo.Tbl_BOCP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_BOCP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+            <PropertyRef Name="CO99A" />
+            <PropertyRef Name="CO300G" />
+            <PropertyRef Name="CO100A" />
+            <PropertyRef Name="CO408N" />
+            <PropertyRef Name="CO403N" />
+            <PropertyRef Name="CO408Y" />
+            <PropertyRef Name="CO408I" />
+            <PropertyRef Name="CO1UA" />
+            <PropertyRef Name="CO1ZA" />
+            <PropertyRef Name="CO1TA" />
+            <PropertyRef Name="CO408H" />
+            <PropertyRef Name="CO416P" />
+            <PropertyRef Name="CO408Z" />
+            <PropertyRef Name="CO408L" />
+            <PropertyRef Name="CO408X" />
+            <PropertyRef Name="CO402Q" />
+            <PropertyRef Name="CO408P" />
+            <PropertyRef Name="CO408O" />
+            <PropertyRef Name="CO408M" />
+            <PropertyRef Name="CO403R" />
+            <PropertyRef Name="CO2A" />
+            <PropertyRef Name="CO408W" />
+            <PropertyRef Name="CO409V" />
+            <PropertyRef Name="VEN001H" />
+            <PropertyRef Name="CO2IA" />
+            <PropertyRef Name="CO401E" />
+            <PropertyRef Name="CO401F" />
+            <PropertyRef Name="IM101M" />
+            <PropertyRef Name="CO408F" />
+            <PropertyRef Name="BK0001" />
+            <PropertyRef Name="CO408G" />
+            <PropertyRef Name="CO408C" />
+            <PropertyRef Name="OBF002" />
+            <PropertyRef Name="OBF003" />
+            <PropertyRef Name="OBF005" />
+            <PropertyRef Name="OBF006" />
+            <PropertyRef Name="MBFUID" />
+            <PropertyRef Name="MBFFID" />
+            <PropertyRef Name="MBFRCS" />
+          </Key>
+          <Property Name="CO407F" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO99A" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="CO300G" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CO100A" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="CO408N" Type="datetime" Nullable="false" />
+          <Property Name="CO403N" Type="decimal" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="CO408Y" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CO408I" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="CO1UA" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="CO1ZA" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO1TA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CO408H" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="CO416P" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408Z" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408L" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="CO408X" Type="datetime" Nullable="false" />
+          <Property Name="CO402Q" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408P" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408O" Type="datetime" Nullable="false" />
+          <Property Name="CO408M" Type="decimal" Precision="11" Scale="4" Nullable="false" />
+          <Property Name="CO403R" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="CO2A" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CO408W" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO409V" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="VEN001H" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CO2IA" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="CO401E" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO401F" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="IM101M" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO408F" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="BK0001" Type="datetime" Nullable="false" />
+          <Property Name="CO408G" Type="datetime" Nullable="false" />
+          <Property Name="CO408C" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="OBF002" Type="datetime" Nullable="false" />
+          <Property Name="OBF003" Type="datetime" Nullable="false" />
+          <Property Name="OBF005" Type="datetime" Nullable="false" />
+          <Property Name="OBF006" Type="datetime" Nullable="false" />
+          <Property Name="MBFUID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MBFFID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MBFRCS" Type="nvarchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eInvoice.dbo.Tbl_BODP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_BODP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+            <PropertyRef Name="CO408N" />
+            <PropertyRef Name="CO409U" />
+            <PropertyRef Name="OBF002" />
+            <PropertyRef Name="OBF003" />
+            <PropertyRef Name="OBF005" />
+            <PropertyRef Name="OBF006" />
+            <PropertyRef Name="MBFUID" />
+            <PropertyRef Name="MBFFID" />
+            <PropertyRef Name="MBFRCS" />
+          </Key>
+          <Property Name="CO407F" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO408N" Type="datetime" Nullable="false" />
+          <Property Name="CO409U" Type="datetime" Nullable="false" />
+          <Property Name="OBF002" Type="datetime" Nullable="false" />
+          <Property Name="OBF003" Type="datetime" Nullable="false" />
+          <Property Name="OBF005" Type="datetime" Nullable="false" />
+          <Property Name="OBF006" Type="datetime" Nullable="false" />
+          <Property Name="MBFUID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MBFFID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MBFRCS" Type="nvarchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_BOHP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+          </Key>
+          <Property Name="CO407F" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO408D" Type="varchar" MaxLength="25" />
+          <Property Name="CO408E" Type="varchar" MaxLength="25" />
+          <Property Name="CO408I" Type="char" MaxLength="1" />
+          <Property Name="CO408H" Type="char" MaxLength="1" />
+          <Property Name="CO408T" Type="char" MaxLength="1" />
+          <Property Name="CO9992" Type="char" MaxLength="1" />
+          <Property Name="CO408U" Type="char" MaxLength="1" />
+          <Property Name="CO408V" Type="decimal" Precision="3" Scale="0" />
+          <Property Name="CO2A" Type="char" MaxLength="6" />
+          <Property Name="CO408W" Type="decimal" Precision="3" Scale="0" />
+          <Property Name="CO409V" Type="decimal" Precision="7" Scale="0" />
+          <Property Name="CO408F" Type="char" MaxLength="10" />
+          <Property Name="CO408G" Type="datetime" />
+          <Property Name="OBF002" Type="datetime" />
+          <Property Name="OBF003" Type="datetime" />
+          <Property Name="OBF005" Type="datetime" />
+          <Property Name="OBF006" Type="datetime" />
+          <Property Name="MBFUID" Type="char" MaxLength="10" />
+          <Property Name="MBFFID" Type="char" MaxLength="10" />
+          <Property Name="MBFRCS" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'eInvoice.dbo.Tbl_BOIP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_BOIP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+            <PropertyRef Name="CO1UA" />
+            <PropertyRef Name="CO1ZA" />
+            <PropertyRef Name="CO1TA" />
+            <PropertyRef Name="CO408Z" />
+            <PropertyRef Name="CO408L" />
+            <PropertyRef Name="CO408X" />
+            <PropertyRef Name="CO408M" />
+            <PropertyRef Name="CO408C" />
+            <PropertyRef Name="VEN001H" />
+            <PropertyRef Name="CO401E" />
+            <PropertyRef Name="CO401F" />
+            <PropertyRef Name="OBF002" />
+            <PropertyRef Name="OBF003" />
+            <PropertyRef Name="OBF005" />
+            <PropertyRef Name="OBF006" />
+            <PropertyRef Name="MBFUID" />
+            <PropertyRef Name="MBFFID" />
+            <PropertyRef Name="MBFRCS" />
+          </Key>
+          <Property Name="CO407F" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO1UA" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="CO1ZA" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO1TA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CO408Z" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408L" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="CO408X" Type="datetime" Nullable="false" />
+          <Property Name="CO408M" Type="decimal" Precision="11" Scale="4" Nullable="false" />
+          <Property Name="CO408C" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="VEN001H" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CO401E" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO401F" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="OBF002" Type="datetime" Nullable="false" />
+          <Property Name="OBF003" Type="datetime" Nullable="false" />
+          <Property Name="OBF005" Type="datetime" Nullable="false" />
+          <Property Name="OBF006" Type="datetime" Nullable="false" />
+          <Property Name="MBFUID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MBFFID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MBFRCS" Type="nvarchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <Function Name="Truncate_Booking_Order_Tables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="eInvoiceModelStoreContainer">
+          <EntitySet Name="Tbl_BOHP" EntityType="Self.Tbl_BOHP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_BOCP" EntityType="Self.Tbl_BOCP" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_BOCP].[CO407F] AS [CO407F], 
+    [Tbl_BOCP].[CO99A] AS [CO99A], 
+    [Tbl_BOCP].[CO300G] AS [CO300G], 
+    [Tbl_BOCP].[CO100A] AS [CO100A], 
+    [Tbl_BOCP].[CO408N] AS [CO408N], 
+    [Tbl_BOCP].[CO403N] AS [CO403N], 
+    [Tbl_BOCP].[CO408Y] AS [CO408Y], 
+    [Tbl_BOCP].[CO408I] AS [CO408I], 
+    [Tbl_BOCP].[CO1UA] AS [CO1UA], 
+    [Tbl_BOCP].[CO1ZA] AS [CO1ZA], 
+    [Tbl_BOCP].[CO1TA] AS [CO1TA], 
+    [Tbl_BOCP].[CO408H] AS [CO408H], 
+    [Tbl_BOCP].[CO416P] AS [CO416P], 
+    [Tbl_BOCP].[CO408Z] AS [CO408Z], 
+    [Tbl_BOCP].[CO408L] AS [CO408L], 
+    [Tbl_BOCP].[CO408X] AS [CO408X], 
+    [Tbl_BOCP].[CO402Q] AS [CO402Q], 
+    [Tbl_BOCP].[CO408P] AS [CO408P], 
+    [Tbl_BOCP].[CO408O] AS [CO408O], 
+    [Tbl_BOCP].[CO408M] AS [CO408M], 
+    [Tbl_BOCP].[CO403R] AS [CO403R], 
+    [Tbl_BOCP].[CO2A] AS [CO2A], 
+    [Tbl_BOCP].[CO408W] AS [CO408W], 
+    [Tbl_BOCP].[CO409V] AS [CO409V], 
+    [Tbl_BOCP].[VEN001H] AS [VEN001H], 
+    [Tbl_BOCP].[CO2IA] AS [CO2IA], 
+    [Tbl_BOCP].[CO401E] AS [CO401E], 
+    [Tbl_BOCP].[CO401F] AS [CO401F], 
+    [Tbl_BOCP].[IM101M] AS [IM101M], 
+    [Tbl_BOCP].[CO408F] AS [CO408F], 
+    [Tbl_BOCP].[BK0001] AS [BK0001], 
+    [Tbl_BOCP].[CO408G] AS [CO408G], 
+    [Tbl_BOCP].[CO408C] AS [CO408C], 
+    [Tbl_BOCP].[OBF002] AS [OBF002], 
+    [Tbl_BOCP].[OBF003] AS [OBF003], 
+    [Tbl_BOCP].[OBF005] AS [OBF005], 
+    [Tbl_BOCP].[OBF006] AS [OBF006], 
+    [Tbl_BOCP].[MBFUID] AS [MBFUID], 
+    [Tbl_BOCP].[MBFFID] AS [MBFFID], 
+    [Tbl_BOCP].[MBFRCS] AS [MBFRCS]
+    FROM [dbo].[Tbl_BOCP] AS [Tbl_BOCP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_BODP" EntityType="Self.Tbl_BODP" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_BODP].[CO407F] AS [CO407F], 
+    [Tbl_BODP].[CO408N] AS [CO408N], 
+    [Tbl_BODP].[CO409U] AS [CO409U], 
+    [Tbl_BODP].[OBF002] AS [OBF002], 
+    [Tbl_BODP].[OBF003] AS [OBF003], 
+    [Tbl_BODP].[OBF005] AS [OBF005], 
+    [Tbl_BODP].[OBF006] AS [OBF006], 
+    [Tbl_BODP].[MBFUID] AS [MBFUID], 
+    [Tbl_BODP].[MBFFID] AS [MBFFID], 
+    [Tbl_BODP].[MBFRCS] AS [MBFRCS]
+    FROM [dbo].[Tbl_BODP] AS [Tbl_BODP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_BOIP" EntityType="Self.Tbl_BOIP" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_BOIP].[CO407F] AS [CO407F], 
+    [Tbl_BOIP].[CO1UA] AS [CO1UA], 
+    [Tbl_BOIP].[CO1ZA] AS [CO1ZA], 
+    [Tbl_BOIP].[CO1TA] AS [CO1TA], 
+    [Tbl_BOIP].[CO408Z] AS [CO408Z], 
+    [Tbl_BOIP].[CO408L] AS [CO408L], 
+    [Tbl_BOIP].[CO408X] AS [CO408X], 
+    [Tbl_BOIP].[CO408M] AS [CO408M], 
+    [Tbl_BOIP].[CO408C] AS [CO408C], 
+    [Tbl_BOIP].[VEN001H] AS [VEN001H], 
+    [Tbl_BOIP].[CO401E] AS [CO401E], 
+    [Tbl_BOIP].[CO401F] AS [CO401F], 
+    [Tbl_BOIP].[OBF002] AS [OBF002], 
+    [Tbl_BOIP].[OBF003] AS [OBF003], 
+    [Tbl_BOIP].[OBF005] AS [OBF005], 
+    [Tbl_BOIP].[OBF006] AS [OBF006], 
+    [Tbl_BOIP].[MBFUID] AS [MBFUID], 
+    [Tbl_BOIP].[MBFFID] AS [MBFFID], 
+    [Tbl_BOIP].[MBFRCS] AS [MBFRCS]
+    FROM [dbo].[Tbl_BOIP] AS [Tbl_BOIP]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eInvoiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_BOHP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+          </Key>
+          <Property Name="CO407F" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO408D" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CO408E" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CO408I" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CO408H" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CO408T" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CO9992" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CO408U" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CO408V" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="CO2A" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CO408W" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="CO409V" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="CO408F" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="CO408G" Type="DateTime" Precision="3" />
+          <Property Name="OBF002" Type="DateTime" Precision="3" />
+          <Property Name="OBF003" Type="DateTime" Precision="3" />
+          <Property Name="OBF005" Type="DateTime" Precision="3" />
+          <Property Name="OBF006" Type="DateTime" Precision="3" />
+          <Property Name="MBFUID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MBFFID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MBFRCS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_BOCP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+            <PropertyRef Name="CO99A" />
+            <PropertyRef Name="CO300G" />
+            <PropertyRef Name="CO100A" />
+            <PropertyRef Name="CO408N" />
+            <PropertyRef Name="CO403N" />
+            <PropertyRef Name="CO408Y" />
+            <PropertyRef Name="CO408I" />
+            <PropertyRef Name="CO1UA" />
+            <PropertyRef Name="CO1ZA" />
+            <PropertyRef Name="CO1TA" />
+            <PropertyRef Name="CO408H" />
+            <PropertyRef Name="CO416P" />
+            <PropertyRef Name="CO408Z" />
+            <PropertyRef Name="CO408L" />
+            <PropertyRef Name="CO408X" />
+            <PropertyRef Name="CO402Q" />
+            <PropertyRef Name="CO408P" />
+            <PropertyRef Name="CO408O" />
+            <PropertyRef Name="CO408M" />
+            <PropertyRef Name="CO403R" />
+            <PropertyRef Name="CO2A" />
+            <PropertyRef Name="CO408W" />
+            <PropertyRef Name="CO409V" />
+            <PropertyRef Name="VEN001H" />
+            <PropertyRef Name="CO2IA" />
+            <PropertyRef Name="CO401E" />
+            <PropertyRef Name="CO401F" />
+            <PropertyRef Name="IM101M" />
+            <PropertyRef Name="CO408F" />
+            <PropertyRef Name="BK0001" />
+            <PropertyRef Name="CO408G" />
+            <PropertyRef Name="CO408C" />
+            <PropertyRef Name="OBF002" />
+            <PropertyRef Name="OBF003" />
+            <PropertyRef Name="OBF005" />
+            <PropertyRef Name="OBF006" />
+            <PropertyRef Name="MBFUID" />
+            <PropertyRef Name="MBFFID" />
+            <PropertyRef Name="MBFRCS" />
+          </Key>
+          <Property Name="CO407F" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO99A" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO300G" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO100A" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408N" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO403N" Type="Decimal" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="CO408Y" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408I" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO1UA" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO1ZA" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO1TA" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408H" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO416P" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408Z" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408L" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408X" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO402Q" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408P" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408O" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO408M" Type="Decimal" Precision="11" Scale="4" Nullable="false" />
+          <Property Name="CO403R" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO2A" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408W" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO409V" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="VEN001H" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO2IA" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO401E" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO401F" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="IM101M" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO408F" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BK0001" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO408G" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO408C" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="OBF002" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF003" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF005" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF006" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MBFUID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MBFFID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MBFRCS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_BODP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+            <PropertyRef Name="CO408N" />
+            <PropertyRef Name="CO409U" />
+            <PropertyRef Name="OBF002" />
+            <PropertyRef Name="OBF003" />
+            <PropertyRef Name="OBF005" />
+            <PropertyRef Name="OBF006" />
+            <PropertyRef Name="MBFUID" />
+            <PropertyRef Name="MBFFID" />
+            <PropertyRef Name="MBFRCS" />
+          </Key>
+          <Property Name="CO407F" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO408N" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO409U" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF002" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF003" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF005" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF006" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MBFUID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MBFFID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MBFRCS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_BOIP">
+          <Key>
+            <PropertyRef Name="CO407F" />
+            <PropertyRef Name="CO1UA" />
+            <PropertyRef Name="CO1ZA" />
+            <PropertyRef Name="CO1TA" />
+            <PropertyRef Name="CO408Z" />
+            <PropertyRef Name="CO408L" />
+            <PropertyRef Name="CO408X" />
+            <PropertyRef Name="CO408M" />
+            <PropertyRef Name="CO408C" />
+            <PropertyRef Name="VEN001H" />
+            <PropertyRef Name="CO401E" />
+            <PropertyRef Name="CO401F" />
+            <PropertyRef Name="OBF002" />
+            <PropertyRef Name="OBF003" />
+            <PropertyRef Name="OBF005" />
+            <PropertyRef Name="OBF006" />
+            <PropertyRef Name="MBFUID" />
+            <PropertyRef Name="MBFFID" />
+            <PropertyRef Name="MBFRCS" />
+          </Key>
+          <Property Name="CO407F" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO1UA" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO1ZA" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO1TA" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408Z" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CO408L" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO408X" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CO408M" Type="Decimal" Precision="11" Scale="4" Nullable="false" />
+          <Property Name="CO408C" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="VEN001H" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CO401E" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="CO401F" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="OBF002" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF003" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF005" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OBF006" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MBFUID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MBFFID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MBFRCS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="eInvoiceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_BOHP" EntityType="Self.Tbl_BOHP" />
+          <EntitySet Name="Tbl_BOCP" EntityType="Self.Tbl_BOCP" />
+          <EntitySet Name="Tbl_BODP" EntityType="Self.Tbl_BODP" />
+          <EntitySet Name="Tbl_BOIP" EntityType="Self.Tbl_BOIP" />
+          <FunctionImport Name="Truncate_Booking_Order_Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eInvoiceModelStoreContainer" CdmEntityContainer="eInvoiceEntities">
+          <EntitySetMapping Name="Tbl_BOHP">
+            <EntityTypeMapping TypeName="eInvoiceModel.Tbl_BOHP">
+              <MappingFragment StoreEntitySet="Tbl_BOHP">
+                <ScalarProperty Name="CO407F" ColumnName="CO407F" />
+                <ScalarProperty Name="CO408D" ColumnName="CO408D" />
+                <ScalarProperty Name="CO408E" ColumnName="CO408E" />
+                <ScalarProperty Name="CO408I" ColumnName="CO408I" />
+                <ScalarProperty Name="CO408H" ColumnName="CO408H" />
+                <ScalarProperty Name="CO408T" ColumnName="CO408T" />
+                <ScalarProperty Name="CO9992" ColumnName="CO9992" />
+                <ScalarProperty Name="CO408U" ColumnName="CO408U" />
+                <ScalarProperty Name="CO408V" ColumnName="CO408V" />
+                <ScalarProperty Name="CO2A" ColumnName="CO2A" />
+                <ScalarProperty Name="CO408W" ColumnName="CO408W" />
+                <ScalarProperty Name="CO409V" ColumnName="CO409V" />
+                <ScalarProperty Name="CO408F" ColumnName="CO408F" />
+                <ScalarProperty Name="CO408G" ColumnName="CO408G" />
+                <ScalarProperty Name="OBF002" ColumnName="OBF002" />
+                <ScalarProperty Name="OBF003" ColumnName="OBF003" />
+                <ScalarProperty Name="OBF005" ColumnName="OBF005" />
+                <ScalarProperty Name="OBF006" ColumnName="OBF006" />
+                <ScalarProperty Name="MBFUID" ColumnName="MBFUID" />
+                <ScalarProperty Name="MBFFID" ColumnName="MBFFID" />
+                <ScalarProperty Name="MBFRCS" ColumnName="MBFRCS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_BOCP">
+            <EntityTypeMapping TypeName="eInvoiceModel.Tbl_BOCP">
+              <MappingFragment StoreEntitySet="Tbl_BOCP">
+                <ScalarProperty Name="CO407F" ColumnName="CO407F" />
+                <ScalarProperty Name="CO99A" ColumnName="CO99A" />
+                <ScalarProperty Name="CO300G" ColumnName="CO300G" />
+                <ScalarProperty Name="CO100A" ColumnName="CO100A" />
+                <ScalarProperty Name="CO408N" ColumnName="CO408N" />
+                <ScalarProperty Name="CO403N" ColumnName="CO403N" />
+                <ScalarProperty Name="CO408Y" ColumnName="CO408Y" />
+                <ScalarProperty Name="CO408I" ColumnName="CO408I" />
+                <ScalarProperty Name="CO1UA" ColumnName="CO1UA" />
+                <ScalarProperty Name="CO1ZA" ColumnName="CO1ZA" />
+                <ScalarProperty Name="CO1TA" ColumnName="CO1TA" />
+                <ScalarProperty Name="CO408H" ColumnName="CO408H" />
+                <ScalarProperty Name="CO416P" ColumnName="CO416P" />
+                <ScalarProperty Name="CO408Z" ColumnName="CO408Z" />
+                <ScalarProperty Name="CO408L" ColumnName="CO408L" />
+                <ScalarProperty Name="CO408X" ColumnName="CO408X" />
+                <ScalarProperty Name="CO402Q" ColumnName="CO402Q" />
+                <ScalarProperty Name="CO408P" ColumnName="CO408P" />
+                <ScalarProperty Name="CO408O" ColumnName="CO408O" />
+                <ScalarProperty Name="CO408M" ColumnName="CO408M" />
+                <ScalarProperty Name="CO403R" ColumnName="CO403R" />
+                <ScalarProperty Name="CO2A" ColumnName="CO2A" />
+                <ScalarProperty Name="CO408W" ColumnName="CO408W" />
+                <ScalarProperty Name="CO409V" ColumnName="CO409V" />
+                <ScalarProperty Name="VEN001H" ColumnName="VEN001H" />
+                <ScalarProperty Name="CO2IA" ColumnName="CO2IA" />
+                <ScalarProperty Name="CO401E" ColumnName="CO401E" />
+                <ScalarProperty Name="CO401F" ColumnName="CO401F" />
+                <ScalarProperty Name="IM101M" ColumnName="IM101M" />
+                <ScalarProperty Name="CO408F" ColumnName="CO408F" />
+                <ScalarProperty Name="BK0001" ColumnName="BK0001" />
+                <ScalarProperty Name="CO408G" ColumnName="CO408G" />
+                <ScalarProperty Name="CO408C" ColumnName="CO408C" />
+                <ScalarProperty Name="OBF002" ColumnName="OBF002" />
+                <ScalarProperty Name="OBF003" ColumnName="OBF003" />
+                <ScalarProperty Name="OBF005" ColumnName="OBF005" />
+                <ScalarProperty Name="OBF006" ColumnName="OBF006" />
+                <ScalarProperty Name="MBFUID" ColumnName="MBFUID" />
+                <ScalarProperty Name="MBFFID" ColumnName="MBFFID" />
+                <ScalarProperty Name="MBFRCS" ColumnName="MBFRCS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_BODP">
+            <EntityTypeMapping TypeName="eInvoiceModel.Tbl_BODP">
+              <MappingFragment StoreEntitySet="Tbl_BODP">
+                <ScalarProperty Name="CO407F" ColumnName="CO407F" />
+                <ScalarProperty Name="CO408N" ColumnName="CO408N" />
+                <ScalarProperty Name="CO409U" ColumnName="CO409U" />
+                <ScalarProperty Name="OBF002" ColumnName="OBF002" />
+                <ScalarProperty Name="OBF003" ColumnName="OBF003" />
+                <ScalarProperty Name="OBF005" ColumnName="OBF005" />
+                <ScalarProperty Name="OBF006" ColumnName="OBF006" />
+                <ScalarProperty Name="MBFUID" ColumnName="MBFUID" />
+                <ScalarProperty Name="MBFFID" ColumnName="MBFFID" />
+                <ScalarProperty Name="MBFRCS" ColumnName="MBFRCS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_BOIP">
+            <EntityTypeMapping TypeName="eInvoiceModel.Tbl_BOIP">
+              <MappingFragment StoreEntitySet="Tbl_BOIP">
+                <ScalarProperty Name="CO407F" ColumnName="CO407F" />
+                <ScalarProperty Name="CO1UA" ColumnName="CO1UA" />
+                <ScalarProperty Name="CO1ZA" ColumnName="CO1ZA" />
+                <ScalarProperty Name="CO1TA" ColumnName="CO1TA" />
+                <ScalarProperty Name="CO408Z" ColumnName="CO408Z" />
+                <ScalarProperty Name="CO408L" ColumnName="CO408L" />
+                <ScalarProperty Name="CO408X" ColumnName="CO408X" />
+                <ScalarProperty Name="CO408M" ColumnName="CO408M" />
+                <ScalarProperty Name="CO408C" ColumnName="CO408C" />
+                <ScalarProperty Name="VEN001H" ColumnName="VEN001H" />
+                <ScalarProperty Name="CO401E" ColumnName="CO401E" />
+                <ScalarProperty Name="CO401F" ColumnName="CO401F" />
+                <ScalarProperty Name="OBF002" ColumnName="OBF002" />
+                <ScalarProperty Name="OBF003" ColumnName="OBF003" />
+                <ScalarProperty Name="OBF005" ColumnName="OBF005" />
+                <ScalarProperty Name="OBF006" ColumnName="OBF006" />
+                <ScalarProperty Name="MBFUID" ColumnName="MBFUID" />
+                <ScalarProperty Name="MBFFID" ColumnName="MBFFID" />
+                <ScalarProperty Name="MBFRCS" ColumnName="MBFRCS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Truncate_Booking_Order_Tables" FunctionName="eInvoiceModel.Store.Truncate_Booking_Order_Tables" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

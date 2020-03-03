@@ -27,14 +27,27 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>\\server-md7\D%24\Programs\Laundry\LaundryLoadBookings\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2.iSeries, Version=12.0.0.0, Culture=neutral, PublicKeyToken=9cdb2ebfb1f93a26, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\IBM\Client Access\IBM.Data.DB2.iSeries.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +56,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingOrderUploadModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingOrderUploadModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookingOrderUploadModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingOrderUploadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookingOrderUploadModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingOrderUploadModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemModel.cs" />
+    <Compile Include="Laundry.cs">
+      <DependentUpon>LaundryOrderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaundryCustomer.cs">
+      <DependentUpon>LaundryOrderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaundryItem.cs">
+      <DependentUpon>LaundryOrderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaundryOrderModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaundryOrderModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaundryOrderModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaundryOrderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaundryOrderModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaundryOrderModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tbl_BOCP.cs">
+      <DependentUpon>BookingOrderUploadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_BODP.cs">
+      <DependentUpon>BookingOrderUploadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_BOHP.cs">
+      <DependentUpon>BookingOrderUploadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_BOIP.cs">
+      <DependentUpon>BookingOrderUploadModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="BookingOrderUploadModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookingOrderUploadModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BookingOrderUploadModel.edmx.diagram">
+      <DependentUpon>BookingOrderUploadModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="LaundryOrderModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LaundryOrderModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LaundryOrderModel.edmx.diagram">
+      <DependentUpon>LaundryOrderModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BookingOrderUploadModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BookingOrderUploadModel.Context.cs</LastGenOutput>
+      <DependentUpon>BookingOrderUploadModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="BookingOrderUploadModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingOrderUploadModel.edmx</DependentUpon>
+      <LastGenOutput>BookingOrderUploadModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="LaundryOrderModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LaundryOrderModel.edmx</DependentUpon>
+      <LastGenOutput>LaundryOrderModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LaundryOrderModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LaundryOrderModel.edmx</DependentUpon>
+      <LastGenOutput>LaundryOrderModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
