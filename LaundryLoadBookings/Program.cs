@@ -7,6 +7,7 @@ using IBM.Data.DB2.iSeries;
 using System.Data.SqlClient;
 using System.Net.Http.Headers;
 using System.Net.Sockets;
+using System.Net.Mail;
 
 namespace LaundryLoadBookings
 {
@@ -15,7 +16,53 @@ namespace LaundryLoadBookings
         public const string iseriesLibrary = "MGPRDDTA";
         static void Main(string[] args)
         {
+            CancelPreviousBookings();
             UploadOrders(3);
+        }
+
+        static void CancelPreviousBookings()
+        {
+            List<string> bookings = new List<string>();
+
+            try
+            {
+                iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 192.168.1.20; UserID=CRYSTAL; Password = CRYSTAL");
+                iSeriesConnection.Open();
+
+                iDB2Command iCmdReadBookingData = new iDB2Command("SELECT BOHP.CO407F AS BOOKINGNO FROM MGPRDDTA.BOHP BOHP WHERE BOHP.CO408D LIKE 'Laundry Bookings%' AND BOHP.CO408F NOT IN ('2','3')", iSeriesConnection);
+                iDB2DataReader iDrReadBookingData = iCmdReadBookingData.ExecuteReader();
+
+                while (iDrReadBookingData.Read())
+                {
+                    string bookingNumber = iDrReadBookingData.GetValue(0).ToString();
+                    bookings.Add(bookingNumber);
+                }
+
+                foreach (var booking in bookings)
+                {
+                    iDB2Command iCmdUpdateBOCPData = new iDB2Command("UPDATE MGPRDDTA.BOCP BOCP SET BOCP.CO408F = '2' WHERE BOCP.CO407F = @bookingNumber AND BOCP.CO408F <> '3'", iSeriesConnection);
+                    iCmdUpdateBOCPData.DeriveParameters();
+                    iCmdUpdateBOCPData.Parameters["@bookingNumber"].Value = booking;
+                    iCmdUpdateBOCPData.ExecuteNonQuery();
+                }
+
+                iSeriesConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                new MailMessage();
+                var smtpServer = new SmtpClient();
+                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", "4LcmvOkc");
+                smtpServer.Host = "mail.teammodern.com";
+                var mail = new MailMessage();
+                mail.From = new MailAddress("e.delivery@teammodern.com", "Electronic Delivery", System.Text.Encoding.UTF8);
+                mail.To.Add("d.absher@teammodern.com");
+                mail.Subject = "Laundry Load Bookings - Cancel Previous Bookings";
+                mail.Body = ex.ToString();
+                mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                mail.ReplyToList.Add("d.absher@teammodern.com");
+                smtpServer.Send(mail);
+            }
         }
 
         static void UploadOrders(int source)
