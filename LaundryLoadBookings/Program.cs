@@ -29,7 +29,7 @@ namespace LaundryLoadBookings
                 iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 192.168.1.20; UserID=CRYSTAL; Password = CRYSTAL");
                 iSeriesConnection.Open();
 
-                iDB2Command iCmdReadBookingData = new iDB2Command("SELECT BOHP.CO407F AS BOOKINGNO FROM MGPRDDTA.BOHP BOHP WHERE BOHP.CO408D LIKE 'Laundry Bookings%' AND BOHP.CO408F NOT IN ('2','3')", iSeriesConnection);
+                iDB2Command iCmdReadBookingData = new iDB2Command("SELECT BOHP.CO407F AS BOOKINGNO FROM MGPRDDTA.BOHP BOHP INNER JOIN MGPRDDTA.BOCP BOCP ON BOHP.CO407F = BOCP.CO407F WHERE BOHP.CO408D LIKE 'Laundry Bookings%' AND BOHP.CO408F NOT IN ('2','3') Group By BOHP.CO407F", iSeriesConnection);
                 iDB2DataReader iDrReadBookingData = iCmdReadBookingData.ExecuteReader();
 
                 while (iDrReadBookingData.Read())
@@ -40,9 +40,10 @@ namespace LaundryLoadBookings
 
                 foreach (var booking in bookings)
                 {
-                    iDB2Command iCmdUpdateBOCPData = new iDB2Command("UPDATE MGPRDDTA.BOCP BOCP SET BOCP.CO408F = '2' WHERE BOCP.CO407F = @bookingNumber AND BOCP.CO408F <> '3'", iSeriesConnection);
+                    iDB2Command iCmdUpdateBOCPData = new iDB2Command("UPDATE MGPRDDTA.BOCP BOCP SET BOCP.CO408F = '2', BOCP.CO408O = @cancelledDate WHERE BOCP.CO407F = @bookingNumber AND BOCP.CO408F <> '3'", iSeriesConnection);
                     iCmdUpdateBOCPData.DeriveParameters();
                     iCmdUpdateBOCPData.Parameters["@bookingNumber"].Value = booking;
+                    iCmdUpdateBOCPData.Parameters["@cancelledDate"].Value = DateTime.Now;
                     iCmdUpdateBOCPData.ExecuteNonQuery();
                 }
 
