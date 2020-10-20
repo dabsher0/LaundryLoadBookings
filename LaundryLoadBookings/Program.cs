@@ -226,7 +226,7 @@ namespace LaundryLoadBookings
                 sqlBocpCmd.Parameters.AddWithValue("@BusinessType", "1");
                 sqlBocpCmd.Parameters.AddWithValue("@FirstShipDate", DateTime.Now);
                 sqlBocpCmd.Parameters.AddWithValue("@SequenceNo", 0);
-                sqlBocpCmd.Parameters.AddWithValue("@CustomerPoNo", " ");
+                sqlBocpCmd.Parameters.AddWithValue("@CustomerPoNo", "Laundry");
                 sqlBocpCmd.Parameters.AddWithValue("@BookingOrderType", "2");
                 sqlBocpCmd.Parameters.AddWithValue("@EnumeratedItem", " ");
                 sqlBocpCmd.Parameters.AddWithValue("@RepackFactor", 1);
