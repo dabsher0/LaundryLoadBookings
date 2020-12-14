@@ -53,8 +53,9 @@ namespace LaundryLoadBookings
             {
                 new MailMessage();
                 var smtpServer = new SmtpClient();
-                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", "4LcmvOkc");
+                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", "Deli157#2");
                 smtpServer.Host = "mail.teammodern.com";
+                smtpServer.EnableSsl = true;
                 var mail = new MailMessage();
                 mail.From = new MailAddress("e.delivery@teammodern.com", "Electronic Delivery", System.Text.Encoding.UTF8);
                 mail.To.Add("d.absher@teammodern.com");
