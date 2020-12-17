@@ -26,7 +26,7 @@ namespace LaundryLoadBookings
 
             try
             {
-                iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 192.168.1.20; UserID=CRYSTAL; Password = CRYSTAL");
+                iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 10.1.4.1; UserID=CRYSTAL; Password = CRYSTAL");
                 iSeriesConnection.Open();
 
                 iDB2Command iCmdReadBookingData = new iDB2Command("SELECT BOHP.CO407F AS BOOKINGNO FROM MGPRDDTA.BOHP BOHP INNER JOIN MGPRDDTA.BOCP BOCP ON BOHP.CO407F = BOCP.CO407F WHERE BOHP.CO408D LIKE 'Laundry Bookings%' AND BOHP.CO408F NOT IN ('2','3') Group By BOHP.CO407F", iSeriesConnection);
@@ -76,7 +76,7 @@ namespace LaundryLoadBookings
             SummerPromoEntities dbsp = new SummerPromoEntities();
             Dictionary<int?, string> loadDates = new Dictionary<int?, string>();
 
-            iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 192.168.1.20; UserID=CRYSTAL; Password = CRYSTAL; DataCompression=True;");
+            iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 10.1.4.1; UserID=CRYSTAL; Password = CRYSTAL; DataCompression=True;");
             iSeriesConnection.Open();
 
             var allLoads = from l in dbsp.LaundryCustomers
