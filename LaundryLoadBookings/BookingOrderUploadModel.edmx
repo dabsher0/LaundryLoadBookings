@@ -72,7 +72,7 @@ warning 6002: The table/view 'eInvoice.dbo.Tbl_BOCP' does not have a primary key
           <Property Name="CO408M" Type="decimal" Precision="11" Scale="4" Nullable="false" />
           <Property Name="CO403R" Type="nvarchar" MaxLength="3" Nullable="false" />
           <Property Name="CO2A" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="CO408W" Type="decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO408W" Type="decimal" Precision="4" Scale="0" Nullable="false" />
           <Property Name="CO409V" Type="decimal" Precision="7" Scale="0" Nullable="false" />
           <Property Name="VEN001H" Type="nvarchar" MaxLength="6" Nullable="false" />
           <Property Name="CO2IA" Type="nvarchar" MaxLength="2" Nullable="false" />
@@ -367,7 +367,7 @@ warning 6002: The table/view 'eInvoice.dbo.Tbl_BOIP' does not have a primary key
           <Property Name="CO408M" Type="Decimal" Precision="11" Scale="4" Nullable="false" />
           <Property Name="CO403R" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CO2A" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CO408W" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="CO408W" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
           <Property Name="CO409V" Type="Decimal" Precision="7" Scale="0" Nullable="false" />
           <Property Name="VEN001H" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CO2IA" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
