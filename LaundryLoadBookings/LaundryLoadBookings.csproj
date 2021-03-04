@@ -71,6 +71,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookingOrderUploadModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EmailModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmailLogin_Result.cs">
+      <DependentUpon>EmailModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemModel.cs" />
     <Compile Include="Laundry.cs">
       <DependentUpon>LaundryOrderModel.tt</DependentUpon>
@@ -124,6 +142,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LaundryOrderModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="EmailModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmailModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EmailModel.edmx.diagram">
+      <DependentUpon>EmailModel.edmx</DependentUpon>
+    </None>
     <None Include="LaundryOrderModel.edmx.diagram">
       <DependentUpon>LaundryOrderModel.edmx</DependentUpon>
     </None>
@@ -139,6 +164,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BookingOrderUploadModel.edmx</DependentUpon>
       <LastGenOutput>BookingOrderUploadModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="EmailModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmailModel.edmx</DependentUpon>
+      <LastGenOutput>EmailModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EmailModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmailModel.edmx</DependentUpon>
+      <LastGenOutput>EmailModel.cs</LastGenOutput>
     </Content>
     <Content Include="LaundryOrderModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -14,10 +14,30 @@ namespace LaundryLoadBookings
     class Program
     {
         public const string iseriesLibrary = "MGPRDDTA";
+        private static string emailPassword;
         static void Main(string[] args)
         {
+            SetEmailPassword();
+
             CancelPreviousBookings();
             UploadOrders(3);
+        }
+
+        private static void SetEmailPassword()
+        {
+            try
+            {
+                using (var db = new IntranetDataBaseEntities())
+                {
+                    var email = db.GetEmailLogin("e.delivery@teammodern.com");
+                    var result = email.FirstOrDefault();
+                    emailPassword = result.Password;
+                }
+            }
+            catch (Exception)
+            {
+                emailPassword = "ChangedNow2021";
+            }
         }
 
         static void CancelPreviousBookings()
@@ -53,7 +73,7 @@ namespace LaundryLoadBookings
             {
                 new MailMessage();
                 var smtpServer = new SmtpClient();
-                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", "Deli157#2");
+                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", emailPassword);
                 smtpServer.Host = "mail.teammodern.com";
                 smtpServer.EnableSsl = true;
                 var mail = new MailMessage();
@@ -578,7 +598,7 @@ namespace LaundryLoadBookings
             {
                 new MailMessage();
                 var smtpServer = new SmtpClient();
-                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", "Deli157#2");
+                smtpServer.Credentials = new System.Net.NetworkCredential("e.delivery@teammodern.com", emailPassword);
                 smtpServer.Host = "mail.teammodern.com";
                 smtpServer.EnableSsl = true;
                 var mail = new MailMessage();
