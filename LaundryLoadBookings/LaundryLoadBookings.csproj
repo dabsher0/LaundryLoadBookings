@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\IBM\Client Access\IBM.Data.DB2.iSeries.dll</HintPath>
     </Reference>
+    <Reference Include="ModernCR">
+      <HintPath>\\server-md3\Shared Documents\Development\Visual Studio 2010\Projects\ModernCR\ModernCR\obj\x86\Debug\ModernCR.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Net.Http.Headers;
 using System.Net.Sockets;
 using System.Net.Mail;
+using ModernCR;
 
 namespace LaundryLoadBookings
 {
@@ -21,6 +22,19 @@ namespace LaundryLoadBookings
 
             CancelPreviousBookings();
             UploadOrders(3);
+            RunReport();
+        }
+
+        private static void RunReport()
+        {
+            var cr = new RunCrystal();
+
+            cr.BuildReport("D:\\Programs\\Laundry\\Reports\\Laundry Bookings.rpt", "D:\\Programs\\Laundry\\Output\\Laundry Bookings.pdf");
+            cr.SetSubject("Laundry Bookings");
+            cr.SetToAddress("w.wilson@teammodern.com");
+            cr.SetToAddress("d.absher@teammodern.com");
+            cr.SetAttachments("D:\\Programs\\Laundry\\Output\\Laundry Bookings.pdf");
+            cr.SendEmail();
         }
 
         private static void SetEmailPassword()
