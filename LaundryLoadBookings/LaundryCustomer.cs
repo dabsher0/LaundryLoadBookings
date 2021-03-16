@@ -19,5 +19,7 @@ namespace LaundryLoadBookings
         public string CustomerName { get; set; }
         public string Status { get; set; }
         public Nullable<int> Load { get; set; }
+        public Nullable<bool> BiWeekly { get; set; }
+        public Nullable<bool> ThisWeek { get; set; }
     }
 }

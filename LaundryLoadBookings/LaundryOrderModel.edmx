@@ -23,6 +23,8 @@
           <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="1" />
           <Property Name="Load" Type="int" />
+          <Property Name="BiWeekly" Type="bit" />
+          <Property Name="ThisWeek" Type="bit" />
         </EntityType>
         <EntityType Name="LaundryItems">
           <Key>
@@ -72,6 +74,8 @@
           <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Load" Type="Int32" />
+          <Property Name="BiWeekly" Type="Boolean" />
+          <Property Name="ThisWeek" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -101,6 +105,8 @@
           <EntitySetMapping Name="LaundryCustomers">
             <EntityTypeMapping TypeName="SummerPromoModel.LaundryCustomer">
               <MappingFragment StoreEntitySet="LaundryCustomers">
+                <ScalarProperty Name="ThisWeek" ColumnName="ThisWeek" />
+                <ScalarProperty Name="BiWeekly" ColumnName="BiWeekly" />
                 <ScalarProperty Name="Load" ColumnName="Load" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />

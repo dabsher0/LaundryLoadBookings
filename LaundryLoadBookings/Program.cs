@@ -22,7 +22,32 @@ namespace LaundryLoadBookings
 
             CancelPreviousBookings();
             UploadOrders(3);
+            UpdateBiWeekly();
             RunReport();
+           
+        }
+
+        private static void UpdateBiWeekly()
+        {
+            SummerPromoEntities dbsp = new SummerPromoEntities();
+
+            var customers = from c in dbsp.LaundryCustomers
+                            where c.BiWeekly == true
+                            select c;
+
+            foreach(var customer in customers)
+            {
+                if(customer.ThisWeek == true)
+                {
+                    customer.ThisWeek = false;
+                }
+                else
+                {
+                    customer.ThisWeek = true;
+                }
+            }
+
+            dbsp.SaveChanges();
         }
 
         private static void RunReport()
@@ -112,6 +137,8 @@ namespace LaundryLoadBookings
 
             try
             {
+                List<OrdersToProcess> allOrders = new List<OrdersToProcess>();
+
                 iDB2Connection iSeriesConnection = new iDB2Connection("DataSource = 10.1.4.1; UserID=CRYSTAL; Password = CRYSTAL; DataCompression=True;");
                 iSeriesConnection.Open();
 
@@ -124,15 +151,60 @@ namespace LaundryLoadBookings
                     loads.Add(currentLoad.CustomerNo, currentLoad.Load);
                 }
 
-                var orders = from ord in dbsp.Laundries
-                             where ord.Qty > 0
-                             select ord;
+             
+                //Get orders that are not bi-weekly
+                var Orders = from o in dbsp.Laundries
+                                join c in dbsp.LaundryCustomers on o.CustomerNo equals c.CustomerNo
+                                where c.BiWeekly == false
+                                select new
+                                {
+                                    CustomerNumber = o.CustomerNo,
+                                    o.ItemNo,
+                                    o.Qty,
+                                    c.BiWeekly,
+                                    c.ThisWeek
+                                };
 
-                foreach (var order in orders)
+                foreach(var order in Orders)
                 {
-                    if (!items.Contains(order.ItemNo))
+                    OrdersToProcess newOrder = new OrdersToProcess();
+                    newOrder.customerNumber = order.CustomerNumber;
+                    newOrder.itemNumber = order.ItemNo;
+                    newOrder.qty = order.Qty;
+
+                    allOrders.Add(newOrder);
+                }
+
+                //Get orders that are biweekly and it is their week to ship
+                var BiWeeklyOrders = from o in dbsp.Laundries
+                                     join c in dbsp.LaundryCustomers on o.CustomerNo equals c.CustomerNo
+                                     where c.BiWeekly == true && c.ThisWeek == true
+                             select new
+                             {
+                                 CustomerNumber = o.CustomerNo,
+                                 o.ItemNo,
+                                 o.Qty,
+                                 c.BiWeekly,
+                                 c.ThisWeek
+                             };
+
+                foreach (var order in BiWeeklyOrders)
+                {
+                    OrdersToProcess newOrder = new OrdersToProcess();
+                    newOrder.customerNumber = order.CustomerNumber;
+                    newOrder.itemNumber = order.ItemNo;
+                    newOrder.qty = order.Qty;
+
+                    allOrders.Add(newOrder);
+                }
+
+
+                foreach (var order in allOrders)
+                {
+
+                    if (!items.Contains(order.itemNumber))
                     {
-                        items.Add(order.ItemNo);
+                        items.Add(order.itemNumber);
                     }
                 }
 
@@ -374,40 +446,40 @@ namespace LaundryLoadBookings
                     SequenceNo = 0;
                     //while (iDrTsBkOrdrCustomers.Read())
                     //{
-                    foreach (var order in orders)
+                    foreach (var order in allOrders)
                     {
                         iDB2Command iCmdTsBkOrdrCustomers = new iDB2Command("SELECT CUSP.AXNANB FROM MGPRDDTA.CUSP CUSP WHERE CUSP.AXMWNB = @CUSTOMER", iSeriesConnection);
                         iCmdTsBkOrdrCustomers.DeriveParameters();
-                        iCmdTsBkOrdrCustomers.Parameters["@CUSTOMER"].Value = order.CustomerNo;
+                        iCmdTsBkOrdrCustomers.Parameters["@CUSTOMER"].Value = order.customerNumber;
                         iCmdTsBkOrdrCustomers.CommandTimeout = 0;
                         iDB2DataReader iDrTsBkOrdrCustomers = iCmdTsBkOrdrCustomers.ExecuteReader();
 
                         while (iDrTsBkOrdrCustomers.Read())
                         {
-                            var foundItem = itemModelList.FirstOrDefault(i => i.ItemNumber.Equals(order.ItemNo));
+                            var foundItem = itemModelList.FirstOrDefault(i => i.ItemNumber.Equals(order.itemNumber));
 
                             SequenceNo++;
                             sqlBocpCmd.Parameters["@BookingOrderNo"].Value = nextBookingOrderNo;
                             sqlBocpCmd.Parameters["@GroupNo"].Value = iDrTsBkOrdrCustomers.GetValue(0);
-                            sqlBocpCmd.Parameters["@CustomerNo"].Value = order.CustomerNo;
+                            sqlBocpCmd.Parameters["@CustomerNo"].Value = order.customerNumber;
                             sqlBocpCmd.Parameters["@SequenceNo"].Value = SequenceNo;
-                            sqlBocpCmd.Parameters["@EnumeratedItem"].Value = order.ItemNo + "00001";
+                            sqlBocpCmd.Parameters["@EnumeratedItem"].Value = order.itemNumber + "00001";
                             sqlBocpCmd.Parameters["@RepackFactor"].Value = foundItem.RepackFactor;
-                            sqlBocpCmd.Parameters["@ItemPackNo"].Value = order.ItemNo;
+                            sqlBocpCmd.Parameters["@ItemPackNo"].Value = order.itemNumber;
                             //sqlBocpCmd.Parameters["@Salesperson"].Value = iDrTsBkOrdrCustomers.GetValue(5);
 
-                            if (loads.ContainsKey(order.CustomerNo))
+                            if (loads.ContainsKey(order.customerNumber))
                             {
-                                if (loadDates.ContainsKey(loads[order.CustomerNo]))
+                                if (loadDates.ContainsKey(loads[order.customerNumber]))
                                 {
-                                    sqlBocpCmd.Parameters["@Load"].Value = loads[order.CustomerNo];
-                                    sqlBocpCmd.Parameters["@ScheduledDeliveryDate"].Value = loadDates[loads[order.CustomerNo]];
+                                    sqlBocpCmd.Parameters["@Load"].Value = loads[order.customerNumber];
+                                    sqlBocpCmd.Parameters["@ScheduledDeliveryDate"].Value = loadDates[loads[order.customerNumber]];
                                 }
                             }
 
                             sqlBocpCmd.Parameters["@FirstShipDate"].Value = DateTime.Now.AddDays(3).ToString("yyyy-MM-dd");
-                            sqlBocpCmd.Parameters["@OriginalOrderQty"].Value = order.Qty;
-                            sqlBocpCmd.Parameters["@OrderQty"].Value = order.Qty;
+                            sqlBocpCmd.Parameters["@OriginalOrderQty"].Value = order.qty;
+                            sqlBocpCmd.Parameters["@OrderQty"].Value = order.qty;
                             sqlBocpCmd.Parameters["@Buyer"].Value = foundItem.Buyer;
                             sqlBocpCmd.Parameters["@Vendor"].Value = foundItem.Vendor;
                             sqlBocpCmd.ExecuteNonQuery();
